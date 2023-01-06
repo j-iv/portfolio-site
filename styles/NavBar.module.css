@@ -1,0 +1,21 @@
+.nav_bar {
+    /* font-weight: bolder; */
+    padding: 30px 40px 30px 40px;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    border-bottom: 0.5px solid rgb(200, 200, 200);
+    position: sticky;
+    top: 0;
+}
+.nav_itemList {
+    color: gray;
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    flex-direction: row;
+}
+.nav_item:hover{
+    cursor: pointer;
+    color: black;
+}
