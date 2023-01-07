@@ -1,5 +1,4 @@
 .nav_bar {
-    /* font-weight: bolder; */
     padding: 30px 40px 30px 40px;
     display: flex;
     justify-content: space-between;
@@ -7,6 +6,12 @@
     border-bottom: 0.5px solid rgb(200, 200, 200);
     position: sticky;
     top: 0;
+}
+.nav_bar_left { 
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
 }
 .nav_itemList {
     color: gray;
@@ -18,4 +23,8 @@
 .nav_item:hover{
     cursor: pointer;
     color: black;
+}
+
+.nav_item_active {
+    color: blue;
 }
