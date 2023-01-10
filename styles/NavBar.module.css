@@ -2,17 +2,13 @@
     padding: 30px 40px 30px 40px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: white;
     border-bottom: 0.5px solid rgb(200, 200, 200);
     position: sticky;
     top: 0;
 }
-.nav_bar_left { 
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    
-}
+
 .nav_itemList {
     color: gray;
     display: flex;
@@ -28,3 +24,36 @@
 .nav_item_active {
     color: blue;
 }
+
+.menu_icon{
+    display: none;
+}
+.menu_icon:hover {
+    cursor: pointer;
+}
+@media screen and (max-width: 600px) {
+    .menu_icon {
+        display: block;
+    }
+    .nav_itemList {
+        transition: all 0.3s ease-in;
+        gap: 0px;
+        flex-direction: column;
+        position: absolute;
+        top: 90px;
+        left: 0px;
+        right: 0px;
+        height: 0px;
+        overflow-y: hidden;
+        padding-left: 30px;
+        
+    }
+    .nav_item {
+        padding: 5px 5px 5px 5px;
+    }
+    .nav_itemList.active {
+        overflow-y: auto;
+        height: 100px;
+        border-bottom: 0.5px solid rgb(200, 200, 200);
+    }
+  }

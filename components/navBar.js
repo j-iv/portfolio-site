@@ -25,10 +25,12 @@ const navLinks = [
 ];
 export default function NavBar() {
   const [activeIdx, setActiveIdx] = useState(-1);
+  const [navExpanded, setNavExpanded] = useState(false);
   return (
     <nav className={`${styles.nav_bar} ${roboto.className}`}>
-      <span className={styles.nav_bar_left}>
-        <span>
+      {console.log('f a', navExpanded)}
+      <span>
+        {/* <span>
           <a
             href={`https://github.com/j-iv`}
             target="_blank"
@@ -36,11 +38,20 @@ export default function NavBar() {
           >
             <Image src="/github.svg" alt="Github logo" width={20} height={20} />
           </a>
-        </span>
-        <span>Jishnu&apos;s Site</span>
+        </span> */}
+        Jishnu&apos;s Site
       </span>
-
-      <ul className={styles.nav_itemList}>
+      <span>
+        <Image
+          src="/menu.svg"
+          alt="Menu icon"
+          height={20}
+          width={20}
+          className={styles.menu_icon}
+          onClick={() => {setNavExpanded(!navExpanded)}}
+        />
+      </span>
+      <ul className={`${navExpanded ? styles.nav_itemList +' '+ styles.active: styles.nav_itemList}`}>
         {navLinks.map((link, idx) => {
           return (
             <li
