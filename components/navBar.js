@@ -28,8 +28,7 @@ export default function NavBar() {
   const [navExpanded, setNavExpanded] = useState(false);
   return (
     <nav className={`${styles.nav_bar} ${roboto.className}`}>
-      {console.log('f a', navExpanded)}
-      <span>
+      <span className={styles.logo}>
         {/* <span>
           <a
             href={`https://github.com/j-iv`}
@@ -41,13 +40,12 @@ export default function NavBar() {
         </span> */}
         Jishnu&apos;s Site
       </span>
-      <span>
+      <span className={styles.menu_icon}>
         <Image
           src="/menu.svg"
           alt="Menu icon"
           height={20}
           width={20}
-          className={styles.menu_icon}
           onClick={() => {setNavExpanded(!navExpanded)}}
         />
       </span>

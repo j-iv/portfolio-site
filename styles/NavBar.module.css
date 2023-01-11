@@ -1,5 +1,5 @@
 .nav_bar {
-    padding: 30px 40px 30px 40px;
+    height: 90px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -7,6 +7,9 @@
     border-bottom: 0.5px solid rgb(200, 200, 200);
     position: sticky;
     top: 0;
+    gap: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .nav_itemList {
@@ -33,10 +36,16 @@
 }
 @media screen and (max-width: 600px) {
     .menu_icon {
-        display: block;
+        display: inline-block;
+        padding:10px;
+    }
+    .menu_icon:hover {
+        border-radius: 50%;
+        background-color: rgb(191, 188, 188);
+        
     }
     .nav_itemList {
-        transition: all 0.3s ease-in;
+        transition: all 0.1s ease-in;
         gap: 0px;
         flex-direction: column;
         position: absolute;
@@ -45,15 +54,15 @@
         right: 0px;
         height: 0px;
         overflow-y: hidden;
-        padding-left: 30px;
+        padding-left: 20px;
         
     }
     .nav_item {
-        padding: 5px 5px 5px 5px;
+        padding: 10px 0px 10px 0px;
     }
     .nav_itemList.active {
         overflow-y: auto;
-        height: 100px;
+        height: 120px;
         border-bottom: 0.5px solid rgb(200, 200, 200);
     }
   }
