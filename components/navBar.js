@@ -40,16 +40,21 @@ export default function NavBar() {
         </span> */}
         Jishnu&apos;s Site
       </span>
-      <span className={styles.menu_icon}>
-        <Image
-          src="/menu.svg"
-          alt="Menu icon"
-          height={20}
-          width={20}
-          onClick={() => {setNavExpanded(!navExpanded)}}
-        />
+      <span
+        className={styles.menu_icon}
+        onClick={() => {
+          setNavExpanded(!navExpanded);
+        }}
+      >
+        <Image src="/menu.svg" alt="Menu icon" height={20} width={20} />
       </span>
-      <ul className={`${navExpanded ? styles.nav_itemList +' '+ styles.active: styles.nav_itemList}`}>
+      <ul
+        className={`${
+          navExpanded
+            ? styles.nav_itemList + " " + styles.active
+            : styles.nav_itemList
+        }`}
+      >
         {navLinks.map((link, idx) => {
           return (
             <li

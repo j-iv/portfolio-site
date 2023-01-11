@@ -19,7 +19,8 @@
     list-style: none;
     flex-direction: row;
 }
-.nav_item:hover{
+
+.nav_item:hover {
     cursor: pointer;
     color: black;
 }
@@ -28,22 +29,26 @@
     color: blue;
 }
 
-.menu_icon{
+.menu_icon {
     display: none;
 }
+
 .menu_icon:hover {
     cursor: pointer;
 }
+
 @media screen and (max-width: 600px) {
     .menu_icon {
         display: inline-block;
-        padding:10px;
+        padding: 10px;
     }
-    .menu_icon:hover {
-        border-radius: 50%;
-        background-color: rgb(191, 188, 188);
-        
+
+    @media (hover: hover) {
+        .menu_icon:hover {
+            background-color: lightgray;
+        }
     }
+
     .nav_itemList {
         transition: all 0.1s ease-in;
         gap: 0px;
@@ -55,14 +60,16 @@
         height: 0px;
         overflow-y: hidden;
         padding-left: 20px;
-        
+
     }
+
     .nav_item {
         padding: 10px 0px 10px 0px;
     }
+
     .nav_itemList.active {
         overflow-y: auto;
         height: 120px;
         border-bottom: 0.5px solid rgb(200, 200, 200);
     }
-  }
+}
