@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "../styles/NavBar.module.css";
 import { Roboto } from "@next/font/google";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const roboto = Roboto({
@@ -26,6 +26,22 @@ const navLinks = [
 export default function NavBar() {
   const [activeIdx, setActiveIdx] = useState(-1);
   const [navExpanded, setNavExpanded] = useState(false);
+  function handleNavToggle() {
+    setNavExpanded(!navExpanded)
+  }
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (navExpanded && !event.target.closest(`.${styles.nav_bar}`)) {
+        setNavExpanded(false);
+      }
+    }
+    document.addEventListener('click', handleClickOutside);
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [navExpanded]);
+  
   return (
     <nav className={`${styles.nav_bar} ${roboto.className}`}>
       <span className={styles.logo}>
